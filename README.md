@@ -55,9 +55,13 @@ Abre: `http://localhost:8080`
 
 El formulario está preparado para conectar con un proveedor serverless.
 
+Endpoint activo:
+
+- `https://formspree.io/f/xgodnezw`
+
 Opciones recomendadas:
 
-- **Formspree**: reemplazar `action` por tu endpoint real.
+- **Formspree**: endpoint ya conectado en `index.html`.
 - **Cloudflare Pages Function**: si prefieres recibir y validar el POST dentro de Cloudflare.
 - **Turnstile**: añadirlo si esperas tráfico no deseado o spam.
 
