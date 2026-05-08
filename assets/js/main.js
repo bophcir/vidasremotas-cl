@@ -42,7 +42,7 @@ if ('IntersectionObserver' in window) {
 if (contactForm) {
   const status = contactForm.querySelector('.form-status');
   const submitButton = contactForm.querySelector('button[type="submit"]');
-  const successUrl = contactForm.dataset.successUrl || '/thanks.html';
+  const successUrl = contactForm.dataset.successUrl || '/thanks';
 
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
