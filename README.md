@@ -53,19 +53,23 @@ Abre: `http://localhost:8080`
 
 ## Formulario de contacto
 
-El formulario ahora lo procesa una **Cloudflare Pages Function** en `/api/contact`.
+El formulario principal publica en **Formspree** y el webhook de Formspree dispara una **Cloudflare Pages Function**.
 
 Flujo:
 
+- usuario completa el formulario
+- Formspree almacena la submission y hace redirect a `/thanks`
+- Formspree envía webhook a `https://vidasremotas.cl/api/webhooks/formspree?secret=...`
+- la función clasifica el mensaje, registra un log propio y envía automatizaciones
 - respuesta automática cordial al remitente
 - copia interna a `Richard.poblete@gmail.com` si el mensaje parece comercial
-- redirección a `/thanks`
 
 Notas:
 
 - Se usa **Resend** para el envío de correos
-- El proyecto requiere el secreto `RESEND_API_KEY` en Cloudflare Pages
+- El proyecto requiere los secretos `RESEND_API_KEY` y `FORMSPREE_WEBHOOK_SECRET` en Cloudflare Pages
 - Para responder a destinatarios externos, Resend debe tener el dominio de envío verificado; mientras eso no ocurra, el flujo no falla y notifica internamente
+- Si quieres persistencia real del log, agrega un binding KV llamado `CONTACT_LOG`
 - Si más adelante quieres un resumen **2 veces al día**, conviene añadir almacenamiento + cron
 
 ## Recomendaciones de seguridad

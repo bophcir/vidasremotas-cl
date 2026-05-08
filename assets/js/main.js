@@ -43,34 +43,37 @@ if (contactForm) {
   const status = contactForm.querySelector('.form-status');
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const successUrl = contactForm.dataset.successUrl || '/thanks';
+  const isInternalAction = new URL(contactForm.action, window.location.href).origin === window.location.origin;
 
-  contactForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
+  if (isInternalAction) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
 
-    if (status) {
-      status.hidden = false;
-      status.textContent = 'Enviando mensaje...';
-    }
-
-    if (submitButton) submitButton.disabled = true;
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: contactForm.method,
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' },
-      });
-
-      if (!response.ok) {
-        throw new Error('Respuesta no exitosa');
-      }
-
-      window.location.assign(successUrl);
-    } catch (error) {
       if (status) {
-        status.textContent = 'No pudimos enviar el mensaje. Intenta nuevamente en unos segundos.';
+        status.hidden = false;
+        status.textContent = 'Enviando mensaje...';
       }
-      if (submitButton) submitButton.disabled = false;
-    }
-  });
+
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (!response.ok) {
+          throw new Error('Respuesta no exitosa');
+        }
+
+        window.location.assign(successUrl);
+      } catch (error) {
+        if (status) {
+          status.textContent = 'No pudimos enviar el mensaje. Intenta nuevamente en unos segundos.';
+        }
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+  }
 }
