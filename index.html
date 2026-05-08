@@ -248,7 +248,7 @@
             </div>
           </div>
 
-          <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xgodnezw" method="POST" data-success-url="/thanks.html">
+          <form class="contact-form reveal" id="contact-form" action="/api/contact" method="POST" data-success-url="/thanks.html">
             <div class="field-grid">
               <label>
                 <span>Nombre</span>
@@ -270,6 +270,11 @@
               <textarea name="mensaje" rows="5" minlength="20" required></textarea>
             </label>
 
+            <label class="visually-hidden" aria-hidden="true">
+              <span>Empresa</span>
+              <input type="text" name="empresa" tabindex="-1" autocomplete="off" />
+            </label>
+
             <label class="checkbox">
               <input type="checkbox" name="consentimiento" required />
               <span>
@@ -278,12 +283,10 @@
               </span>
             </label>
 
-            <input type="hidden" name="_subject" value="Nuevo contacto desde vidasremotas.cl" />
-            <input type="hidden" name="_language" value="es" />
-            <input type="hidden" name="_next" value="/thanks.html" />
+            <input type="hidden" name="source" value="website" />
 
             <p class="form-help">
-              Envío seguro con Formspree. Tus datos se usan solo para responder tu consulta.
+              Envío seguro. Tus datos se usan solo para responder tu consulta.
             </p>
 
             <p class="form-status" aria-live="polite" hidden></p>

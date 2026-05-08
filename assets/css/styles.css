@@ -188,6 +188,13 @@ textarea { resize: vertical; min-height: 150px; }
 }
 .checkbox input { width: 1.05rem; height: 1.05rem; margin-top: .2rem; }
 .checkbox span, .form-help, .muted { color: var(--muted-2); }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
 .privacy-note, .form-help {
   padding: 1rem 1.1rem; border-radius: 18px; border: 1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.025);

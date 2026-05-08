@@ -53,18 +53,19 @@ Abre: `http://localhost:8080`
 
 ## Formulario de contacto
 
-El formulario está preparado para conectar con un proveedor serverless.
+El formulario ahora lo procesa una **Cloudflare Pages Function** en `/api/contact`.
 
-Endpoint activo:
+Flujo:
 
-- `https://formspree.io/f/xgodnezw`
-- Redirección post-envío: `/thanks.html`
+- respuesta automática cordial al remitente
+- copia interna a `Richard.poblete@gmail.com` si el mensaje parece comercial
+- redirección a `/thanks.html`
 
-Opciones recomendadas:
+Notas:
 
-- **Formspree**: endpoint ya conectado y con redirección local a `thanks.html`.
-- **Cloudflare Pages Function**: si prefieres recibir y validar el POST dentro de Cloudflare.
-- **Turnstile**: añadirlo si esperas tráfico no deseado o spam.
+- Se usa **Resend** para el envío de correos
+- El proyecto requiere el secreto `RESEND_API_KEY` en Cloudflare Pages
+- Si más adelante quieres un resumen **2 veces al día**, conviene añadir almacenamiento + cron
 
 ## Recomendaciones de seguridad
 
