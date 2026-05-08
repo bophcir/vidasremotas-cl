@@ -248,7 +248,7 @@
             </div>
           </div>
 
-          <form class="contact-form reveal" action="https://formspree.io/f/xgodnezw" method="POST">
+          <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xgodnezw" method="POST" data-success-url="/thanks.html">
             <div class="field-grid">
               <label>
                 <span>Nombre</span>
@@ -280,12 +280,13 @@
 
             <input type="hidden" name="_subject" value="Nuevo contacto desde vidasremotas.cl" />
             <input type="hidden" name="_language" value="es" />
-            <input type="hidden" name="_next" value="https://vidasremotas.cl/thanks.html" />
+            <input type="hidden" name="_next" value="/thanks.html" />
 
             <p class="form-help">
-              Recomendación: conecta este formulario con Formspree o una Cloudflare Pages Function.
-              No guardes datos en el frontend.
+              Envío seguro con Formspree. Tus datos se usan solo para responder tu consulta.
             </p>
+
+            <p class="form-status" aria-live="polite" hidden></p>
 
             <button class="btn btn-primary btn-block" type="submit">Enviar consulta</button>
           </form>

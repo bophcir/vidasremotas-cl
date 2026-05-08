@@ -58,11 +58,11 @@ El formulario está preparado para conectar con un proveedor serverless.
 Endpoint activo:
 
 - `https://formspree.io/f/xgodnezw`
-- Redirección post-envío: `https://vidasremotas.cl/thanks.html`
+- Redirección post-envío: `/thanks.html`
 
 Opciones recomendadas:
 
-- **Formspree**: endpoint ya conectado en `index.html`.
+- **Formspree**: endpoint ya conectado y con redirección local a `thanks.html`.
 - **Cloudflare Pages Function**: si prefieres recibir y validar el POST dentro de Cloudflare.
 - **Turnstile**: añadirlo si esperas tráfico no deseado o spam.
 
