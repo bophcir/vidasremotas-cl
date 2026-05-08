@@ -4,31 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content="5;url=/" />
     <title>Gracias | Vidas Remotas</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
   <body>
     <main class="section">
-      <div class="container prose reveal" style="text-align:center;">
-        <p class="eyebrow">Mensaje recibido</p>
-        <h1>Gracias por escribirnos</h1>
-        <p>
-          Hemos recibido tu consulta. Revisaremos la información y te responderemos a la brevedad.
-        </p>
+      <div class="container" style="max-width: 760px;">
+        <section class="hero-copy" style="margin: 0 auto; text-align: center;">
+          <p class="eyebrow">Mensaje recibido</p>
+          <h1 style="margin-inline: auto;">Gracias por escribirnos</h1>
+          <p class="lead" style="margin-inline: auto;">
+            Hemos recibido tu consulta. Revisaremos la información y te responderemos a la brevedad.
+          </p>
 
-        <div class="privacy-note" style="margin: 2rem auto 0; max-width: 42rem; text-align:left;">
-          <strong>Qué sigue:</strong>
-          <ul>
-            <li>Revisar tu requerimiento</li>
-            <li>Evaluar factibilidad y alcance</li>
-            <li>Responder al correo que indicaste</li>
-          </ul>
-        </div>
+          <div class="privacy-note" style="margin: 2rem auto 0; max-width: 42rem; text-align:left;">
+            <strong>Qué sigue:</strong>
+            <ul>
+              <li>Revisar tu requerimiento</li>
+              <li>Evaluar factibilidad y alcance</li>
+              <li>Responder al correo que indicaste</li>
+            </ul>
+          </div>
 
-        <p style="margin-top: 2rem;">
-          <a class="btn btn-primary" href="/">Volver al inicio</a>
-        </p>
+          <p style="margin-top: 2rem;">
+            <a class="btn btn-primary" href="/">Volver al inicio</a>
+          </p>
+
+          <p class="muted" id="redirect-note" style="margin-top: 1rem;">
+            Volverás automáticamente al inicio en unos segundos.
+          </p>
+        </section>
       </div>
     </main>
+
+    <script>
+      setTimeout(() => {
+        window.location.replace('/');
+      }, 5000);
+    </script>
   </body>
 </html>
