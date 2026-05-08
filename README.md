@@ -59,12 +59,13 @@ Flujo:
 
 - respuesta automática cordial al remitente
 - copia interna a `Richard.poblete@gmail.com` si el mensaje parece comercial
-- redirección a `/thanks.html`
+- redirección a `/thanks`
 
 Notas:
 
 - Se usa **Resend** para el envío de correos
 - El proyecto requiere el secreto `RESEND_API_KEY` en Cloudflare Pages
+- Para responder a destinatarios externos, Resend debe tener el dominio de envío verificado; mientras eso no ocurra, el flujo no falla y notifica internamente
 - Si más adelante quieres un resumen **2 veces al día**, conviene añadir almacenamiento + cron
 
 ## Recomendaciones de seguridad

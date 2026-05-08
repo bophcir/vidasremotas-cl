@@ -72,6 +72,11 @@ async function sendEmail(env, payload) {
   return response.json();
 }
 
+function isResendDomainRestriction(error) {
+  const text = String(error?.message || error || '');
+  return text.includes('validation_error') && text.includes('verify a domain');
+}
+
 function successResponse() {
   return new Response(JSON.stringify({ ok: true, next: '/thanks.html' }), {
     status: 200,
@@ -80,6 +85,10 @@ function successResponse() {
       'Cache-Control': 'no-store',
     },
   });
+}
+
+function redirectResponse(url) {
+  return Response.redirect(url, 303);
 }
 
 function errorResponse(message, status = 400) {
@@ -94,6 +103,7 @@ function errorResponse(message, status = 400) {
 
 export async function onRequestPost({ request, env }) {
   try {
+    const accept = request.headers.get('accept') || '';
     const formData = await request.formData();
     const values = {
       nombre: String(formData.get('nombre') || '').trim(),
@@ -104,7 +114,7 @@ export async function onRequestPost({ request, env }) {
     };
 
     if (values.empresa) {
-      return successResponse();
+      return accept.includes('application/json') ? successResponse() : redirectResponse('/thanks');
     }
 
     if (!values.nombre || !values.email || !values.mensaje) {
@@ -114,29 +124,38 @@ export async function onRequestPost({ request, env }) {
     const businessLead = isBusinessLead(values);
     const replyText = `Hola ${values.nombre},\n\nGracias por escribir a Vidas Remotas. Hemos recibido tu mensaje y lo revisaremos con atención.\n\nEn general, orientamos cada caso según ubicación, nivel de autonomía esperado y alcance técnico. Si es necesario, un especialista asignado se contactará a la brevedad para avanzar contigo.\n\nSaludos cordiales,\nEquipo Vidas Remotas`;
 
-    await sendEmail(env, {
-      from: env.MAIL_FROM || 'Vidas Remotas <onboarding@resend.dev>',
-      to: [values.email],
-      subject: 'Hemos recibido tu mensaje — Vidas Remotas',
-      text: replyText,
-      html: toHtml(replyText),
-      reply_to: env.REPLY_TO || 'bophcir@gmail.com',
-    });
+    let replyBlocked = false;
+    try {
+      await sendEmail(env, {
+        from: env.MAIL_FROM || 'Vidas Remotas <onboarding@resend.dev>',
+        to: [values.email],
+        subject: 'Hemos recibido tu mensaje — Vidas Remotas',
+        text: replyText,
+        html: toHtml(replyText),
+        reply_to: env.REPLY_TO || 'bophcir@gmail.com',
+      });
+    } catch (error) {
+      if (isResendDomainRestriction(error)) {
+        replyBlocked = true;
+      } else {
+        throw error;
+      }
+    }
 
-    if (businessLead) {
-      const internalText = `Nuevo contacto con potencial comercial\n\n${toText(values)}`;
+    if (businessLead || replyBlocked) {
+      const internalText = `${replyBlocked ? 'Aviso: la respuesta automática externa quedó pendiente de verificación de dominio en Resend.\n\n' : ''}${businessLead ? 'Nuevo contacto con potencial comercial\n\n' : 'Nuevo contacto recibido\n\n'}${toText(values)}`;
 
       await sendEmail(env, {
         from: env.MAIL_FROM || 'Vidas Remotas <onboarding@resend.dev>',
         to: [env.INTERNAL_COPY_TO || 'Richard.poblete@gmail.com'],
-        subject: `Posible negocio — ${values.nombre} / Vidas Remotas`,
+        subject: `${businessLead ? 'Posible negocio' : 'Contacto recibido'} — ${values.nombre} / Vidas Remotas`,
         text: internalText,
         html: toHtml(internalText),
         reply_to: values.email,
       });
     }
 
-    return successResponse();
+    return accept.includes('application/json') ? successResponse() : redirectResponse('/thanks');
   } catch (error) {
     return errorResponse('No se pudo procesar el formulario.', 500);
   }
