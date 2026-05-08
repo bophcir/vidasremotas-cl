@@ -137,22 +137,25 @@ export async function onRequestPost({ request, env }) {
     } catch (error) {
       if (isResendDomainRestriction(error)) {
         replyBlocked = true;
-      } else {
-        throw error;
       }
+      console.warn('Reply email failed:', String(error));
     }
 
     if (businessLead || replyBlocked) {
       const internalText = `${replyBlocked ? 'Aviso: la respuesta automática externa quedó pendiente de verificación de dominio en Resend.\n\n' : ''}${businessLead ? 'Nuevo contacto con potencial comercial\n\n' : 'Nuevo contacto recibido\n\n'}${toText(values)}`;
 
-      await sendEmail(env, {
-        from: env.MAIL_FROM || 'Vidas Remotas <onboarding@resend.dev>',
-        to: [env.INTERNAL_COPY_TO || 'Richard.poblete@gmail.com'],
-        subject: `${businessLead ? 'Posible negocio' : 'Contacto recibido'} — ${values.nombre} / Vidas Remotas`,
-        text: internalText,
-        html: toHtml(internalText),
-        reply_to: values.email,
-      });
+      try {
+        await sendEmail(env, {
+          from: env.MAIL_FROM || 'Vidas Remotas <onboarding@resend.dev>',
+          to: [env.INTERNAL_COPY_TO || 'Richard.poblete@gmail.com'],
+          subject: `${businessLead ? 'Posible negocio' : 'Contacto recibido'} — ${values.nombre} / Vidas Remotas`,
+          text: internalText,
+          html: toHtml(internalText),
+          reply_to: values.email,
+        });
+      } catch (error) {
+        console.warn('Internal copy email failed:', String(error));
+      }
     }
 
     return accept.includes('application/json') ? successResponse() : redirectResponse('/thanks');
