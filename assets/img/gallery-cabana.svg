@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Cabaña moderna">
+  <rect width="1200" height="900" fill="#102017"/>
+  <path d="M0 540 C 180 470, 340 460, 520 390 S 860 320, 1200 420 L1200 900 L0 900 Z" fill="#1b2e24"/>
+  <path d="M120 600l160-130 160 130v190H120z" fill="#d8ddd6" fill-opacity=".18" stroke="#d7efe0" stroke-opacity=".3"/>
+  <path d="M170 515h220" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+  <path d="M250 515l66 28" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+  <path d="M282 600h120v190H282z" fill="#09110d" fill-opacity=".5"/>
+  <rect x="694" y="575" width="320" height="160" rx="18" fill="#0a130f" fill-opacity=".45" stroke="#d7efe0" stroke-opacity=".18"/>
+  <path d="M700 560h320" stroke="#9bc49f" stroke-width="18" stroke-linecap="round"/>
+  <rect x="548" y="605" width="120" height="170" rx="10" fill="#4d402f"/>
+  <circle cx="920" cy="170" r="52" fill="#d7efe0" fill-opacity=".12"/>
+</svg>

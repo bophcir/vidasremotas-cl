@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Paneles solares">
+  <rect width="1200" height="900" fill="#0b1611"/>
+  <path d="M0 530 C 200 460, 360 500, 540 420 S 900 340, 1200 430 L1200 900 L0 900 Z" fill="#18261f"/>
+  <g transform="translate(210 360) skewX(-12)">
+    <rect width="360" height="210" rx="16" fill="#0f1f19" stroke="#d7efe0" stroke-opacity=".2"/>
+    <path d="M0 70h360M0 140h360M90 0v210M180 0v210M270 0v210" stroke="#9bc49f" stroke-opacity=".26"/>
+  </g>
+  <g transform="translate(620 330) skewX(-12)">
+    <rect width="360" height="210" rx="16" fill="#102017" stroke="#d7efe0" stroke-opacity=".2"/>
+    <path d="M0 70h360M0 140h360M90 0v210M180 0v210M270 0v210" stroke="#9bc49f" stroke-opacity=".26"/>
+  </g>
+  <circle cx="940" cy="150" r="54" fill="#d7efe0" fill-opacity=".12"/>
+</svg>

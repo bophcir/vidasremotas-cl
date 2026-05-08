@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Bosque con niebla">
+  <rect width="1200" height="900" fill="#09110d"/>
+  <path d="M0 590 C 150 520, 320 530, 520 430 S 900 340, 1200 450 L1200 900 L0 900 Z" fill="#15231c"/>
+  <g opacity=".7">
+    <path d="M140 700l90-180 90 180z" fill="#2b4638"/>
+    <rect x="214" y="700" width="32" height="120" fill="#4d402f"/>
+    <path d="M300 720l120-240 120 240z" fill="#345344"/>
+    <rect x="398" y="720" width="40" height="140" fill="#4d402f"/>
+    <path d="M844 706l88-174 88 174z" fill="#2b4638"/>
+    <rect x="916" y="706" width="32" height="118" fill="#4d402f"/>
+  </g>
+  <rect y="520" width="1200" height="380" fill="#d7efe0" fill-opacity=".05"/>
+</svg>

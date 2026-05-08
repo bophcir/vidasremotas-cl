@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Conectividad remota">
+  <rect width="1200" height="900" fill="#0d1713"/>
+  <path d="M0 540 C 160 470, 330 470, 520 395 S 890 320, 1200 430 L1200 900 L0 900 Z" fill="#18261f"/>
+  <g transform="translate(370 230)">
+    <circle cx="240" cy="250" r="48" fill="#9bc49f" fill-opacity=".26"/>
+    <circle cx="240" cy="250" r="148" fill="none" stroke="#9bc49f" stroke-opacity=".26" stroke-width="12"/>
+    <circle cx="240" cy="250" r="252" fill="none" stroke="#d7efe0" stroke-opacity=".12" stroke-width="10"/>
+    <path d="M240 10v88M240 402v88M0 250h88M392 250h88" stroke="#d7efe0" stroke-opacity=".2" stroke-width="12" stroke-linecap="round"/>
+    <path d="M240 250L414 86" stroke="#9bc49f" stroke-opacity=".36" stroke-width="16" stroke-linecap="round"/>
+    <path d="M240 250L438 250" stroke="#9bc49f" stroke-opacity=".36" stroke-width="16" stroke-linecap="round"/>
+    <path d="M240 250L94 92" stroke="#9bc49f" stroke-opacity=".36" stroke-width="16" stroke-linecap="round"/>
+  </g>
+</svg>

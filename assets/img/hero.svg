@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Bosque del sur de Chile con cabaña, energía solar y niebla">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#091711"/>
+      <stop offset=".55" stop-color="#102017"/>
+      <stop offset="1" stop-color="#040806"/>
+    </linearGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8f0ea" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#e8f0ea" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cabin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8ddd6" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#8e7a63" stop-opacity=".42"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <circle cx="1170" cy="200" r="90" fill="#d7efe0" fill-opacity=".08"/>
+  <path d="M0 680 C 260 500, 460 550, 700 410 S 1110 300, 1600 450 L1600 1200 L0 1200 Z" fill="#14251c"/>
+  <path d="M0 840 C 220 720, 460 780, 690 650 S 1100 560, 1600 710 L1600 1200 L0 1200 Z" fill="#1b2e24"/>
+  <g opacity=".45">
+    <path d="M160 700l88-164 88 164z" fill="#2f4c3c"/>
+    <rect x="232" y="700" width="33" height="118" fill="#4d402f"/>
+    <path d="M310 726l84-156 84 156z" fill="#2f4c3c"/>
+    <rect x="378" y="726" width="30" height="100" fill="#4d402f"/>
+    <path d="M1220 702l96-172 96 172z" fill="#2f4c3c"/>
+    <rect x="1300" y="702" width="34" height="120" fill="#4d402f"/>
+  </g>
+  <g transform="translate(610 520)">
+    <path d="M0 140 L160 40 L320 140 V330 H0 Z" fill="url(#cabin)" stroke="#d7efe0" stroke-opacity=".3" stroke-width="3"/>
+    <path d="M44 128h100v118H44z" fill="#0f1712" fill-opacity=".48"/>
+    <path d="M192 124h84v206h-84z" fill="#111a15" fill-opacity=".5"/>
+    <path d="M54 82h212" stroke="#d7efe0" stroke-opacity=".24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M74 82l50 26" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+    <path d="M138 82l50 26" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+    <path d="M202 82l50 26" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+  </g>
+  <g opacity=".55">
+    <path d="M0 340c180 60 280 90 450 54s258-120 398-96 240 110 368 112 238-50 384-132v180H0z" fill="url(#fog)"/>
+    <path d="M0 430c150 54 286 74 420 40s262-108 390-88 250 104 386 98 260-52 404-132v144H0z" fill="url(#fog)" opacity=".8"/>
+  </g>
+  <text x="90" y="128" fill="#edf3ee" font-family="Inter, system-ui, sans-serif" font-size="62" font-weight="700">Vida autónoma en el sur de Chile</text>
+  <text x="90" y="186" fill="#b7c8bd" font-family="Inter, system-ui, sans-serif" font-size="26">Energía solar · agua · conectividad · construcción sustentable</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Baterías y respaldo energético">
+  <rect width="1200" height="900" fill="#0b1512"/>
+  <path d="M0 560 C 180 490, 380 500, 560 420 S 910 340, 1200 440 L1200 900 L0 900 Z" fill="#17241e"/>
+  <g transform="translate(220 250)">
+    <rect x="60" y="120" width="170" height="360" rx="24" fill="#d8ddd6" fill-opacity=".16" stroke="#d7efe0" stroke-opacity=".24"/>
+    <rect x="300" y="60" width="170" height="420" rx="24" fill="#d8ddd6" fill-opacity=".16" stroke="#d7efe0" stroke-opacity=".24"/>
+    <rect x="540" y="150" width="170" height="330" rx="24" fill="#d8ddd6" fill-opacity=".16" stroke="#d7efe0" stroke-opacity=".24"/>
+    <path d="M145 120v-40M385 60V20M625 150v-40" stroke="#9bc49f" stroke-width="18" stroke-linecap="round"/>
+    <path d="M110 250h70M350 190h70M590 270h70" stroke="#9bc49f" stroke-width="18" stroke-linecap="round"/>
+    <path d="M132 250l18 28h-34l18-28zm240-60l18 28h-34l18-28zm240 80l18 28h-34l18-28z" fill="#9bc49f" fill-opacity=".3"/>
+  </g>
+</svg>

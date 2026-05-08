@@ -1,0 +1,17 @@
+{
+  "name": "Vidas Remotas",
+  "short_name": "Vidas Remotas",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1f19",
+  "theme_color": "#123529",
+  "description": "Vida autónoma en el sur de Chile.",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

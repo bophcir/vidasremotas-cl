@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Sistema de agua y almacenamiento">
+  <rect width="1200" height="900" fill="#0b1512"/>
+  <path d="M0 500 C 180 430, 360 470, 520 400 S 860 330, 1200 430 L1200 900 L0 900 Z" fill="#17241e"/>
+  <g transform="translate(180 250)">
+    <rect x="80" y="140" width="180" height="340" rx="34" fill="#d8ddd6" fill-opacity=".16" stroke="#d7efe0" stroke-opacity=".26"/>
+    <rect x="330" y="90" width="180" height="390" rx="34" fill="#d8ddd6" fill-opacity=".16" stroke="#d7efe0" stroke-opacity=".26"/>
+    <path d="M170 0v140M420 0v90" stroke="#9bc49f" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="170" cy="0" r="30" fill="#9bc49f" fill-opacity=".28"/>
+    <circle cx="420" cy="0" r="30" fill="#9bc49f" fill-opacity=".28"/>
+    <path d="M0 560c120-70 220-90 340-60s220 88 360 58" fill="none" stroke="#8ccde0" stroke-opacity=".42" stroke-width="20" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vidas Remotas">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d7efe0"/>
+      <stop offset="1" stop-color="#6e9d7b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#0f1f19"/>
+  <path d="M14 40c7-14 15-21 18-21s11 7 18 21" fill="none" stroke="url(#g)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M18 44h28" stroke="#9bc49f" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="44" cy="19" r="5" fill="#d7efe0"/>
+</svg>
