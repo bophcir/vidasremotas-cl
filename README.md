@@ -79,8 +79,7 @@ Opciones recomendadas:
 
 ## Ajustes sugeridos antes de producción
 
-- Reemplazar `contacto@vidasremotas.cl` por una casilla real
+- Reemplazar `bophcir@gmail.com` por una casilla de contacto definitiva si lo deseas
 - Sustituir el endpoint `formspree` por el definitivo
 - Si tienes fotos propias, reemplaza los SVG de galería por imágenes reales optimizadas WebP/AVIF
 - Revisar la política de privacidad con asesoría legal
-
