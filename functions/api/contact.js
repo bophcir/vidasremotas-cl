@@ -87,8 +87,8 @@ function successResponse() {
   });
 }
 
-function redirectResponse(url) {
-  return Response.redirect(url, 303);
+function redirectResponse(request, urlPath) {
+  return Response.redirect(new URL(urlPath, request.url).toString(), 303);
 }
 
 function errorResponse(message, status = 400) {
@@ -114,7 +114,7 @@ export async function onRequestPost({ request, env }) {
     };
 
     if (values.empresa) {
-      return accept.includes('application/json') ? successResponse() : redirectResponse('/thanks');
+      return accept.includes('application/json') ? successResponse() : redirectResponse(request, '/thanks');
     }
 
     if (!values.nombre || !values.email || !values.mensaje) {
@@ -158,7 +158,7 @@ export async function onRequestPost({ request, env }) {
       }
     }
 
-    return accept.includes('application/json') ? successResponse() : redirectResponse('/thanks');
+    return accept.includes('application/json') ? successResponse() : redirectResponse(request, '/thanks');
   } catch (error) {
     return errorResponse('No se pudo procesar el formulario.', 500);
   }
