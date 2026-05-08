@@ -58,6 +58,7 @@ El formulario está preparado para conectar con un proveedor serverless.
 Endpoint activo:
 
 - `https://formspree.io/f/xgodnezw`
+- Redirección post-envío: `https://vidasremotas.cl/thanks.html`
 
 Opciones recomendadas:
 
